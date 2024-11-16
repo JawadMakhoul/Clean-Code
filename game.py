@@ -1,13 +1,13 @@
 from Matrix import Matrix
 import random
-
+# commit test
 class GoldRush(Matrix):
     def __init__(self, rows, cols):
         super().__init__(rows, cols)
         self.s1 = 0
         self.s2 = 0
         self.win = ""
-        self.coins = 0
+        self.coins = 1
 
     def load_board(self):
         if self.rows == 0 and self.cols == 0:
