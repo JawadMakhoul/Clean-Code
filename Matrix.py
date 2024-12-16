@@ -17,17 +17,20 @@ class Matrix:
     def print(self):
         for row in self.matrix:
             print("\t".join(map(str, row)))
-        print("-----------------")
+        print("-" * 20)
 
     def find_coordinate(self, value):
-        for r in range(self.rows):
-            if value in self.matrix[r]:
-                c = self.matrix[r].index(value)
-                return {'x': r, 'y': c}
+        for r, row in enumerate(self.matrix):
+            for c, cell in enumerate(row):
+                if cell == value:
+                    return r, c
         return None
 
-    def get(self, row_num, col_num):
-        return self.matrix[row_num][col_num]
+    def get(self, row, col):
+        return self.matrix[row][col]
+    
+    def set(self, row, col, value):
+        self.matrix[row][col] = value
 
     def print_row(self, row_num):
         for c in self.matrix[row_num]:
